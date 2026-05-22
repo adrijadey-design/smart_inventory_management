@@ -1,5 +1,19 @@
 # StockFlow – Full Stack Inventory Tracker
-# Pure Python Backend (zero pip installs) + React Frontend + SQLite
+
+For small to medium-sized businesses, reliance on manual registers and fragmented spreadsheets frequently leads to stock discrepancies, undetected product expirations, and a lack of real-time operational visibility, while traditional enterprise software remains prohibitively expensive. Developed as a final-year Master of Computer Applications (MCA) project, StockFlow is a comprehensive, full-stack digital inventory management system designed to directly address and eliminate these inefficiencies. It provides a centralized, highly intuitive web-based platform that acts as the single source of truth for a business's entire inventory lifecycle, from procurement to point-of-sale.
+
+StockFlow is built to accommodate the dynamic nature of retail operations through several innovative core capabilities. It features a secure, three-tier Role-Based Access Control (RBAC) architecture and a streamlined sales interface integrated with an automated PDF Invoice Generator, allowing staff to instantly produce professional, branded bills. To seamlessly connect physical stock with digital records, the system incorporates mobile-ready camera barcode scanning for rapid item lookup, alongside a smart procurement module that lets users directly upload physical supplier receipts or photos for robust auditing. These operational tools are backed by a real-time analytics dashboard that provides live KPI tracking and proactive alerts for low-stock thresholds and upcoming product expirations.
+
+## Features:
+📊 Live Dashboard — real-time stats, stock levels, and alerts at a glance
+🔍 Smart Search & Filter — filter by category, status (low / out / ok), sort by any field
+➕ Full CRUD — add, edit, restock, and delete inventory items
+📷 Barcode Lookup — fetch items instantly by barcode
+🚨 Low-Stock Alerts — automatic threshold-based notifications
+📤 Export — download inventory as CSV or a formatted text report
+🗄️ Pre-seeded Database — ships with 12 sample items so you can explore immediately
+⚡ Zero Dependencies — backend runs on Python's built-in standard library only
+
 
 ## QUICK START
 
@@ -45,37 +59,8 @@
         └── init_db.py            ← Re-seed:  python init_db.py
 
 
-## API ENDPOINTS
-
-    GET    /api/health
-    GET    /api/stats
-
-    GET    /api/items                 ?search= &category= &status=low|out|ok &sort= &order=
-    GET    /api/items/:id
-    GET    /api/items/barcode/:bc
-    POST   /api/items                 body: { name, category, barcode, qty, price, threshold }
-    PUT    /api/items/:id             body: any subset of above
-    PATCH  /api/items/:id/restock     body: { qty }
-    DELETE /api/items/:id
-
-    GET    /api/export/csv
-    GET    /api/export/report
 
 
-## BUILT-IN PYTHON MODULES USED (no pip needed)
-
-    http.server   — HTTP server
-    sqlite3       — database
-    json          — request / response parsing
-    urllib.parse  — query string + URL parsing
-    csv, io       — CSV export
-    re            — URL routing (regex)
-    datetime      — timestamps
-    sys, os       — path resolution
 
 
-## SWITCHING TO POSTGRESQL
 
-    1. Install psycopg2:   pip install psycopg2-binary
-    2. In database.py, replace get_connection() with a psycopg2 connection.
-    3. Run:  psql -U postgres -d stockflow_db -f database/stockflow_postgres.sql
