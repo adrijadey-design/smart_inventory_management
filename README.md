@@ -2,8 +2,8 @@
 
 For small to medium-sized businesses, reliance on manual registers and fragmented spreadsheets frequently leads to stock discrepancies, undetected product expirations, and a lack of real-time operational visibility, while traditional enterprise software remains prohibitively expensive. Developed as a final-year Master of Computer Applications (MCA) project, StockFlow is a comprehensive, full-stack digital inventory management system designed to directly address and eliminate these inefficiencies. It provides a centralized, highly intuitive web-based platform that acts as the single source of truth for a business's entire inventory lifecycle, from procurement to point-of-sale.
 
-# Roles:
-### Owner: 
+## Roles:
+#### Owner: 
 
 •	View full dashboard & analytics
 
@@ -14,7 +14,7 @@ For small to medium-sized businesses, reliance on manual registers and fragmente
 •	Approve major changes
 
 •	Access system settings
-### Admin:
+#### Admin:
 
 •	Manage inventory (add/update/delete items)
 
@@ -25,7 +25,7 @@ For small to medium-sized businesses, reliance on manual registers and fragmente
 •	Manage staff accounts
 
 •	Handle low stock alerts
-### Staff:
+#### Staff:
 
 •	Create sales (billing)
 
@@ -37,7 +37,7 @@ For small to medium-sized businesses, reliance on manual registers and fragmente
 
 •	Cannot access reports/settings
 
-# Features:
+## Features:
 
 📊 Live Dashboard — real-time stats, stock levels, and alerts at a glance
 
