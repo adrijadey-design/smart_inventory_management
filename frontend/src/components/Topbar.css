@@ -1,0 +1,8 @@
+/* frontend/src/components/Topbar.css */
+.topbar {
+  padding: 20px 32px; border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: space-between;
+  background: var(--surface); position: sticky; top: 0; z-index: 50;
+}
+.topbar-title { font-size: 1.1rem; font-weight: 700; }
+.topbar-right { display: flex; gap: 12px; align-items: center; }

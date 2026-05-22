@@ -1,0 +1,52 @@
+/* frontend/src/components/UserBadge.css */
+
+.user-badge-wrap { position: relative; }
+
+.user-badge {
+  display: flex; align-items: center; gap: 10px;
+  padding: 8px 12px; border-radius: 10px;
+  cursor: pointer; border: 1px solid var(--border);
+  background: var(--surface2); transition: all .18s;
+  min-width: 160px;
+}
+.user-badge:hover { border-color: var(--accent); }
+
+.user-avatar {
+  width: 32px; height: 32px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1rem; flex-shrink: 0; opacity: 0.9;
+}
+
+.user-info {
+  display: flex; flex-direction: column; gap: 1px; flex: 1;
+}
+.user-name {
+  font-size: 0.78rem; font-weight: 700; color: var(--text);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.user-role {
+  font-size: 0.62rem; font-family: var(--font-mono);
+  text-transform: uppercase; letter-spacing: 1px;
+}
+.badge-chevron { font-size: 0.6rem; color: var(--muted); }
+
+/* Dropdown menu */
+.user-menu {
+  position: absolute; top: calc(100% + 8px); right: 0;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 10px; min-width: 180px; z-index: 200;
+  box-shadow: 0 12px 40px rgba(0,0,0,.4);
+  animation: scaleIn .15s ease;
+  overflow: hidden;
+}
+.user-menu-divider { height: 1px; background: var(--border); }
+.user-menu-item {
+  display: flex; align-items: center; gap: 8px;
+  width: 100%; padding: 11px 14px; border: none;
+  background: transparent; color: var(--text);
+  font-family: var(--font-head); font-size: 0.82rem;
+  cursor: pointer; transition: background .15s; text-align: left;
+}
+.user-menu-item:hover { background: var(--surface2); }
+.user-menu-item.logout { color: var(--danger); }
+.user-menu-item.logout:hover { background: rgba(255,74,107,.08); }

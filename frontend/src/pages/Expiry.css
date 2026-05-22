@@ -1,0 +1,103 @@
+/* frontend/src/pages/Expiry.css */
+
+/* ── Stat cards ─────────────────────────────────────────────── */
+.exp-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.exp-stat-card {
+  background: var(--bg2);
+  border-radius: 12px;
+  padding: 16px 20px;
+  border-bottom: 3px solid transparent;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.exp-stat-card.red    { border-color: #ff3b3b; }
+.exp-stat-card.orange { border-color: #ffc542; }
+.exp-stat-card.green  { border-color: var(--accent); }
+.exp-stat-card.gray   { border-color: #6b7290; }
+
+.exp-stat-icon  { font-size: 1.2rem; }
+.exp-stat-val   { font-size: 1.8rem; font-weight: 700; color: var(--text); }
+.exp-stat-label { font-size: .72rem; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); }
+
+/* ── Controls ───────────────────────────────────────────────── */
+.exp-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+/* ── Tabs ───────────────────────────────────────────────────── */
+.exp-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.exp-tab {
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  padding: 8px 16px;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: .9rem;
+  transition: all .15s;
+  margin-bottom: -1px;
+}
+.exp-tab.active { color: var(--accent); border-bottom-color: var(--accent); font-weight: 600; }
+.exp-tab:hover  { color: var(--text); }
+
+/* ── Overview sections ──────────────────────────────────────── */
+.exp-overview       { display: flex; flex-direction: column; gap: 24px; }
+.exp-section        { display: block; }
+.exp-section-title  { font-size: 1rem; font-weight: 600; margin-bottom: 12px; }
+.exp-expired-title  { color: #ff3b3b; }
+.exp-soon-title     { color: #ffc542; }
+
+/* Table row highlights */
+.exp-row-expired { background: rgba(255, 59, 59, .04); }
+.exp-row-soon    { background: rgba(255, 197, 66, .04); }
+
+/* ── Date display ───────────────────────────────────────────── */
+.exp-date         { font-family: monospace; font-size: .85rem; font-weight: 600; }
+.exp-date.expired { color: #ff3b3b; }
+.exp-date.soon    { color: #ffc542; }
+.exp-date.good    { color: var(--accent); }
+
+/* ── Days left badge ────────────────────────────────────────── */
+.days-left          { font-weight: 700; font-size: .85rem; padding: 2px 8px; border-radius: 20px; display: inline-block; }
+.days-left.critical { background: rgba(255, 59, 59, .15);  color: #ff3b3b; }
+.days-left.warn     { background: rgba(255, 197, 66, .15); color: #ffc542; }
+.days-label         { color: var(--muted); font-size: .8rem; margin-left: 4px; }
+
+/* ── Status pills ───────────────────────────────────────────── */
+.exp-status-pill  { padding: 2px 10px; border-radius: 20px; font-size: .75rem; font-weight: 600; display: inline-block; }
+.exp-pill-expired { background: rgba(255, 59, 59, .15);   color: #ff3b3b; }
+.exp-pill-soon    { background: rgba(255, 197, 66, .15);  color: #ffc542; }
+.exp-pill-good    { background: rgba(0, 229, 160, .12);   color: var(--accent); }
+.exp-pill-nodate  { background: rgba(120, 120, 120, .12); color: var(--muted); }
+
+/* ── Item name cell ─────────────────────────────────────────── */
+.item-name-cell { font-weight: 600; font-size: .9rem; }
+
+/* ── Qty colors ─────────────────────────────────────────────── */
+.qty-red  { color: #ff3b3b; font-weight: 700; }
+.qty-warn { color: #ffc542; font-weight: 700; }
+
+/* ── Empty state ────────────────────────────────────────────── */
+.exp-empty {
+  text-align: center;
+  padding: 48px;
+  color: var(--muted);
+}
+.exp-empty-icon { font-size: 3rem; margin-bottom: 12px; }
+.exp-empty p    { font-size: .95rem; }

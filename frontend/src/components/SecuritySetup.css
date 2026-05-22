@@ -1,0 +1,22 @@
+/* frontend/src/components/SecuritySetup.css */
+.sec-modal { max-width: 480px; }
+
+.sec-header {
+  display: flex; align-items: flex-start; gap: 14px; margin-bottom: 22px;
+}
+.sec-icon { font-size: 2rem; flex-shrink: 0; margin-top: 2px; }
+.sec-header h2 { font-size: 1rem; font-weight: 800; margin-bottom: 4px; }
+.sec-header p  { font-size: .75rem; color: var(--muted); font-family: var(--font-mono); }
+
+.sec-question-preview {
+  background: var(--surface2); border: 1px solid rgba(108,143,255,.2);
+  border-radius: 8px; padding: 10px 14px;
+  font-size: .8rem; color: var(--accent3); font-family: var(--font-mono);
+  margin-bottom: 14px; line-height: 1.5;
+}
+
+.sec-note {
+  font-size: .7rem; color: var(--muted); font-family: var(--font-mono);
+  background: var(--surface2); border-radius: 8px; padding: 10px 14px;
+  margin-bottom: 4px; line-height: 1.6;
+}

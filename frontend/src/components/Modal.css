@@ -1,0 +1,12 @@
+/* frontend/src/components/Modal.css */
+.modal-overlay {
+  position: fixed; inset: 0; background: rgba(0,0,0,.72);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 500; backdrop-filter: blur(4px); padding: 20px;
+}
+.modal {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); width: 100%; max-width: 500px; padding: 28px;
+}
+.modal h2 { font-size: 1.1rem; font-weight: 800; margin-bottom: 20px; }
+.modal-footer { display: flex; justify-content: flex-end; gap: 10px; margin-top: 22px; }

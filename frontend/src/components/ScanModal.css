@@ -1,0 +1,273 @@
+/* frontend/src/components/ScanModal.css */
+
+/* ── Modal size ─────────────────────────────────────────── */
+.modal-scan {
+  max-width: 480px;
+  width: 95vw;
+}
+
+/* Flash on successful scan */
+.scan-flash {
+  animation: scanFlash 0.5s ease;
+}
+@keyframes scanFlash {
+  0%   { box-shadow: 0 0 0 0 rgba(0,229,160,0); }
+  30%  { box-shadow: 0 0 0 8px rgba(0,229,160,0.5); }
+  100% { box-shadow: 0 0 0 0 rgba(0,229,160,0); }
+}
+
+/* ── Header ─────────────────────────────────────────────── */
+.scan-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.scan-header h2 { margin: 0; font-size: 1.1rem; }
+
+/* ── Mode toggle ────────────────────────────────────────── */
+.scan-mode-toggle {
+  display: flex;
+  gap: 4px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 3px;
+}
+.mode-btn {
+  padding: 5px 14px;
+  border-radius: 6px;
+  border: none;
+  background: transparent;
+  color: var(--muted);
+  font-size: .82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all .15s;
+}
+.mode-btn.active {
+  background: var(--accent);
+  color: #000;
+}
+.mode-btn:not(.active):hover { color: var(--text); }
+
+/* ── QuaggaJS viewport ──────────────────────────────────── */
+.quagga-wrap {
+  position: relative;
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #000;
+  margin-bottom: 12px;
+  aspect-ratio: 4/3;
+}
+
+/* QuaggaJS injects a <video> and <canvas> inside the target div */
+.quagga-viewport {
+  width: 100%;
+  height: 100%;
+}
+.quagga-viewport video {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+  display: block;
+}
+.quagga-viewport canvas.drawingBuffer {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100% !important;
+  height: 100% !important;
+  pointer-events: none;
+}
+
+/* ── Scan frame overlay ─────────────────────────────────── */
+.scan-frame-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+.scan-frame {
+  position: relative;
+  width: 72%;
+  aspect-ratio: 2.5/1;
+}
+.corner {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-color: var(--accent, #00e5a0);
+  border-style: solid;
+}
+.corner.tl { top: 0;    left: 0;  border-width: 3px 0 0 3px; border-radius: 4px 0 0 0; }
+.corner.tr { top: 0;    right: 0; border-width: 3px 3px 0 0; border-radius: 0 4px 0 0; }
+.corner.bl { bottom: 0; left: 0;  border-width: 0 0 3px 3px; border-radius: 0 0 0 4px; }
+.corner.br { bottom: 0; right: 0; border-width: 0 3px 3px 0; border-radius: 0 0 4px 0; }
+
+/* Animated scan line */
+.scan-line {
+  position: absolute;
+  left: 6px; right: 6px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent,#00e5a0), transparent);
+  animation: scanline 1.8s ease-in-out infinite;
+  border-radius: 2px;
+}
+@keyframes scanline {
+  0%   { top: 10%;  opacity: 0; }
+  10%  { opacity: 1; }
+  90%  { opacity: 1; }
+  100% { top: 90%; opacity: 0; }
+}
+
+.camera-hint {
+  margin-top: 14px;
+  font-size: .78rem;
+  color: rgba(255,255,255,.7);
+  background: rgba(0,0,0,.4);
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+
+/* ── Detected toast ─────────────────────────────────────── */
+.scan-detected {
+  background: rgba(0,229,160,.12);
+  border: 1px solid rgba(0,229,160,.3);
+  color: var(--accent,#00e5a0);
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: .88rem;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+/* ── Searching state ────────────────────────────────────── */
+.scan-searching {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--muted);
+  font-size: .9rem;
+  padding: 12px 0;
+}
+.spinner-sm {
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--border);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin .6s linear infinite;
+  flex-shrink: 0;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ── Result cards ───────────────────────────────────────── */
+.scan-result {
+  border-radius: 10px;
+  padding: 16px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+/* Found */
+.scan-found {
+  background: rgba(0,229,160,.06);
+  border: 1px solid rgba(0,229,160,.25);
+}
+.scan-found-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.scan-found-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+.scan-name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.3;
+}
+.scan-barcode-display {
+  font-family: monospace;
+  font-size: .78rem;
+  color: var(--muted);
+  display: block;
+  margin-top: 2px;
+}
+.scan-meta-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 16px;
+  background: rgba(255,255,255,.03);
+  border-radius: 8px;
+  padding: 10px 12px;
+}
+.scan-meta-item { display: flex; flex-direction: column; gap: 2px; }
+.scan-meta-lbl  { font-size: .7rem; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
+.scan-meta-val  { font-size: .88rem; font-weight: 500; color: var(--text); display: flex; align-items: center; }
+
+/* Not found */
+.scan-notfound {
+  background: rgba(255,107,74,.06);
+  border: 1px solid rgba(255,107,74,.2);
+  text-align: center;
+}
+.scan-notfound-icon { font-size: 2rem; margin-bottom: 8px; }
+.scan-notfound p    { color: var(--muted); font-size: .9rem; margin-bottom: 4px; }
+
+/* ── Camera error ───────────────────────────────────────── */
+.cam-error {
+  background: rgba(255,59,59,.08);
+  border: 1px solid rgba(255,59,59,.2);
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  color: #ff6b4a;
+  font-size: .9rem;
+  margin-bottom: 12px;
+}
+.cam-error-icon { font-size: 2rem; margin-bottom: 8px; }
+.cam-error small { display: block; color: var(--muted); margin-top: 6px; font-size: .8rem; }
+
+/* ── Hints ──────────────────────────────────────────────── */
+.scan-hint {
+  color: var(--muted);
+  font-size: .85rem;
+  margin-bottom: 14px;
+  margin-top: 0;
+}
+.install-hint {
+  text-align: center;
+  font-size: .8rem;
+  color: var(--muted);
+  margin-top: 12px;
+  padding: 8px;
+  background: rgba(255,255,255,.03);
+  border-radius: 6px;
+}
+.install-hint code {
+  background: var(--bg);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: .78rem;
+  color: var(--accent);
+}
+
+/* ── dot helper (reuse) ─────────────────────────────────── */
+.dot {
+  display: inline-block;
+  width: 8px; height: 8px;
+  border-radius: 50%;
+}
+.dot-green  { background: var(--accent, #00e5a0); }
+.dot-yellow { background: #ffc542; }
+.dot-red    { background: #ff3b3b; }
