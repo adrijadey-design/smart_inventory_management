@@ -3,6 +3,26 @@
 For small to medium-sized businesses, reliance on manual registers and fragmented spreadsheets frequently leads to stock discrepancies, undetected product expirations, and a lack of real-time operational visibility, while traditional enterprise software remains prohibitively expensive. Developed as a final-year Master of Computer Applications (MCA) project, StockFlow is a comprehensive, full-stack digital inventory management system designed to directly address and eliminate these inefficiencies. It provides a centralized, highly intuitive web-based platform that acts as the single source of truth for a business's entire inventory lifecycle, from procurement to point-of-sale.
 
 ## Features:
+# For Owner: 
+•	View full dashboard & analytics
+•	Manage Admins & Staff
+•	View all reports (sales, profit, stock)
+•	Approve major changes
+•	Access system settings
+# For Admin:
+•	Manage inventory (add/update/delete items)
+•	Handle suppliers
+•	View sales reports
+•	Manage staff accounts
+•	Handle low stock alerts
+# For Staff:
+•	Create sales (billing)
+•	Scan barcode
+•	View limited inventory
+•	Cannot delete items
+•	Cannot access reports/settings
+
+
 📊 Live Dashboard — real-time stats, stock levels, and alerts at a glance
 
 🔍 Smart Search & Filter — filter by category, status (low / out / ok), sort by any field
@@ -18,6 +38,15 @@ For small to medium-sized businesses, reliance on manual registers and fragmente
 🗄️ Pre-seeded Database — ships with 12 sample items so you can explore immediately
 
 ⚡ Zero Dependencies — backend runs on Python's built-in standard library only
+
+## Tech Stack:
+- Operating System: Windows 
+- Frontend Technologies: HTML5, CSS3, JavaScript, React.js
+- Backend Technologies: Pure Python
+- Database: SQLite (for small-scale usage)
+- Libraries & Tools: Pandas (for Excel/CSV export)
+- Development Tools: VS Code, Web browser (Google Chrome)
+
 
 
 ## QUICK START
