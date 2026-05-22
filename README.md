@@ -2,40 +2,36 @@
 
 For small to medium-sized businesses, reliance on manual registers and fragmented spreadsheets frequently leads to stock discrepancies, undetected product expirations, and a lack of real-time operational visibility, while traditional enterprise software remains prohibitively expensive. Developed as a final-year Master of Computer Applications (MCA) project, StockFlow is a comprehensive, full-stack digital inventory management system designed to directly address and eliminate these inefficiencies. It provides a centralized, highly intuitive web-based platform that acts as the single source of truth for a business's entire inventory lifecycle, from procurement to point-of-sale.
 
-## Roles:
-#### Owner: 
+## User Roles & Permissions
+Stockflow supports three distinct roles, each with carefully scoped access to keep your inventory data secure and operations smooth.
+#### 👑 Owner
+The Owner has unrestricted access to every part of the system — ideal for business proprietors who need full visibility and control.
 
-•	View full dashboard & analytics
+- View full dashboard & analytics — Access the complete overview including revenue summaries, profit margins, stock health indicators, and historical trend charts across all categories and time periods.
+- Manage Admins & Staff — Create, edit, deactivate, or remove Admin and Staff accounts. Assign roles and control who has access to what within the system.
+- View all reports — Generate and download detailed sales reports, profit/loss breakdowns, and stock movement history. Export data as CSV or formatted text reports for accounting or audits.
+- Approve major changes — Acts as the final approver for high-impact actions such as bulk deletions, large restocks, or price overrides that exceed set thresholds.
+- Access system settings — Configure global settings such as low-stock thresholds, categories, barcode formats, export preferences, and database management options.
 
-•	Manage Admins & Staff
 
-•	View all reports (sales, profit, stock)
+#### 🛠️ Admin
+Admins handle the day-to-day operational management of the inventory. They have enough access to keep things running without touching business-critical settings.
 
-•	Approve major changes
+- Manage inventory — Add new products with full details (name, category, barcode, quantity, price, threshold), update existing item information, and permanently delete items that are discontinued or no longer tracked.
+- Handle suppliers — Record and manage supplier information linked to inventory items, making it easy to track which products come from which vendors and when restocks are expected.
+- View sales reports — Access sales summaries to understand which products are moving fast, which are stagnant, and overall revenue generated within a selected time period.
+- Manage staff accounts — Create and manage Staff-level accounts, reset credentials, and monitor staff activity logs to ensure accountability on the floor.
+- Handle low stock alerts — Review and act on automatic low-stock notifications. Trigger restock actions directly from the alerts panel and mark alerts as resolved once restocking is confirmed.
 
-•	Access system settings
-#### Admin:
 
-•	Manage inventory (add/update/delete items)
+#### 🧑‍💼 Staff
+Staff members are limited to operational tasks only — scanning, billing, and basic inventory visibility — ensuring they can do their job without accidentally modifying critical data.
 
-•	Handle suppliers
-
-•	View sales reports
-
-•	Manage staff accounts
-
-•	Handle low stock alerts
-#### Staff:
-
-•	Create sales (billing)
-
-•	Scan barcode
-
-•	View limited inventory
-
-•	Cannot delete items
-
-•	Cannot access reports/settings
+- Create sales (billing) — Generate new sales entries by selecting items, entering quantities, and producing a bill. This updates stock levels automatically upon sale confirmation.
+- Scan barcode — Use the barcode scanner interface to instantly look up any item in the inventory by scanning its code, pulling up name, quantity, price, and stock status in real time.
+- View limited inventory — Browse the inventory list to check stock availability, item locations, and basic product details — but without access to pricing analytics or full report data.
+- Cannot delete items — Item deletion is restricted to Admin and Owner roles only. Staff members will not see the delete option, preventing accidental or unauthorized removal of inventory records.
+- Cannot access reports/settings — Financial reports, export tools, and system configuration pages are fully hidden from Staff accounts to protect sensitive business data and system integrity.
 
 ## Features:
 
