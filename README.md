@@ -6,12 +6,19 @@ StockFlow is built to accommodate the dynamic nature of retail operations throug
 
 ## Features:
 📊 Live Dashboard — real-time stats, stock levels, and alerts at a glance
+
 🔍 Smart Search & Filter — filter by category, status (low / out / ok), sort by any field
+
 ➕ Full CRUD — add, edit, restock, and delete inventory items
+
 📷 Barcode Lookup — fetch items instantly by barcode
+
 🚨 Low-Stock Alerts — automatic threshold-based notifications
+
 📤 Export — download inventory as CSV or a formatted text report
+
 🗄️ Pre-seeded Database — ships with 12 sample items so you can explore immediately
+
 ⚡ Zero Dependencies — backend runs on Python's built-in standard library only
 
 
